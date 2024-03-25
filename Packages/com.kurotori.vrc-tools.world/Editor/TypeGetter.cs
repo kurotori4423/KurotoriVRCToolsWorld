@@ -1,11 +1,10 @@
-﻿namespace PrefabFinder
+﻿namespace KurotoriTools
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
-    using UnityEngine;
     using UnityEditor;
+    using UnityEngine;
 
     /// <summary>
     /// タイプの取得を行うクラス

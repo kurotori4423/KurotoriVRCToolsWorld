@@ -7,13 +7,18 @@ using System.IO;
 
 namespace KurotoriTools
 {
+    /// <summary>
+    /// スタティックメッシュの結合機能
+    /// </summary>
     public class MeshCombiner : EditorWindow
     {
         private GameObject baseModel;
+
         private string saveFolder = "CombineMesh";
 
         public bool calcurateLightMapUV = true;
         public bool excludeChildren = false;
+        [Tooltip("除外するオブジェクト")]
         public GameObject[] excludeObjects;
 
         [MenuItem("KurotoriTools/MeshCombiner")]
@@ -27,27 +32,16 @@ namespace KurotoriTools
         {
             KurotoriUtility.GUITitle("Mesh Combiner");
 
-            using (new EditorGUILayout.HorizontalScope())
-            {
-                EditorGUILayout.LabelField("Save Folder");
-                saveFolder = EditorGUILayout.TextField(saveFolder);
-            }
+            saveFolder = EditorGUILayout.TextField(new GUIContent("Save Folder", "保存先フォルダ"), saveFolder);
 
-            GUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Parent Object");
-            baseModel = EditorGUILayout.ObjectField(baseModel, typeof(GameObject), true) as GameObject;
-            GUILayout.EndHorizontal();
+            baseModel = EditorGUILayout.ObjectField(new GUIContent("Conbine Object", "結合する親となるオブジェクト"),baseModel, typeof(GameObject), true) as GameObject;
 
-            GUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Calcurate LightMapUV");
-            calcurateLightMapUV = EditorGUILayout.Toggle(calcurateLightMapUV);
-            GUILayout.EndHorizontal();
-            
+            calcurateLightMapUV = EditorGUILayout.Toggle(new GUIContent("Calcurate LightMap UV", "結合時にライトマップUVを再計算するか？\n UV2情報を残したいときはオフ"), calcurateLightMapUV);
+
+            excludeChildren = EditorGUILayout.Toggle(new GUIContent("Exclude Exclude Object Children", "除外オブジェクトの子供のオブジェクトも除外するかどうか"), excludeChildren);
+
             ScriptableObject target = this;
             SerializedObject so = new SerializedObject(target);
-
-            SerializedProperty excludeChildrenProperty = so.FindProperty("excludeChildren");
-            EditorGUILayout.PropertyField(excludeChildrenProperty, false);
 
             SerializedProperty excludeMeshesProperty = so.FindProperty("excludeObjects");
             EditorGUILayout.PropertyField(excludeMeshesProperty, true);
@@ -72,8 +66,6 @@ namespace KurotoriTools
 
         private void Check()
         {
-            Debug.Log("Test");
-
             if (baseModel == null) return;
 
             var meshRenderers = baseModel.GetComponentsInChildren<MeshRenderer>();

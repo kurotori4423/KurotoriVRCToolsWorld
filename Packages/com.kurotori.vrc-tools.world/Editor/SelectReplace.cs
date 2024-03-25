@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using KurotoriTools;
 
 public class SelectReplace : EditorWindow
 {
@@ -16,6 +17,8 @@ public class SelectReplace : EditorWindow
 
     private void OnGUI()
     {
+        KurotoriUtility.GUITitle("Select Replace","選択したオブジェクトを、指定したプレハブで置き変える");
+
         GUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Base Prefab");
         basePrefab = EditorGUILayout.ObjectField(basePrefab, typeof(GameObject), true) as GameObject;

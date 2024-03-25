@@ -51,4 +51,10 @@ public class ObjectPlaceUtility
             GameObject.DestroyImmediate(child.gameObject);
         }
     }
+
+    [MenuItem("GameObject/Object Place/オブジェクトを先頭に移動", false, 11)]
+    public static void SetFirstSibling()
+    {
+        Selection.activeGameObject.transform.SetSiblingIndex(0);
+    }
 }

@@ -354,6 +354,8 @@ namespace KurotoriTools
 
         public static void GUITitle(string title)
         {
+            Color fontColor = EditorGUIUtility.isProSkin ? Color.white : Color.black;
+
             EditorGUILayout.Space();
             EditorGUILayout.Space();
             EditorGUILayout.Space();
@@ -361,8 +363,28 @@ namespace KurotoriTools
             titleStyle.alignment = TextAnchor.MiddleCenter;
             titleStyle.fontSize = 16;
             titleStyle.fontStyle = FontStyle.Bold;
+            titleStyle.normal.textColor = fontColor;
             EditorGUILayout.LabelField(title, titleStyle);
             EditorGUILayout.Space();
+            EditorGUILayout.Space();
+            EditorGUILayout.Space();
+        }
+
+        public static void GUITitle(string title, string discription)
+        {
+            Color fontColor = EditorGUIUtility.isProSkin ? Color.white : Color.black;
+
+            EditorGUILayout.Space();
+            EditorGUILayout.Space();
+            EditorGUILayout.Space();
+            GUIStyle titleStyle = new GUIStyle();
+            titleStyle.alignment = TextAnchor.MiddleCenter;
+            titleStyle.fontSize = 16;
+            titleStyle.fontStyle = FontStyle.Bold;
+            titleStyle.normal.textColor = fontColor;
+            EditorGUILayout.LabelField(title, titleStyle);
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField(discription);
             EditorGUILayout.Space();
             EditorGUILayout.Space();
         }

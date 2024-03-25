@@ -48,7 +48,7 @@ public class SetStaticSettings
         }
     }
 
-    [MenuItem("Assets/プロップ向けStaticSetting", false, 11)]
+    [MenuItem("Assets/Static設定/プロップ向けStaticSetting", false, 11)]
     public static void SetStaticPropPrefabs()
     {
         foreach (var assets in Selection.gameObjects)
@@ -72,13 +72,13 @@ public class SetStaticSettings
         }
     }
 
-    [MenuItem("GameObject/プロップ向けStaticSetting", false, 11)]
+    [MenuItem("GameObject/Static設定/プロップ向けStaticSetting", false, 11)]
     public static void SetStaticPropScene()
     {
         SetStaticProp(Selection.gameObjects);
     }
 
-    [MenuItem("GameObject/プロップ向けStaticSetting階層", false, 11)]
+    [MenuItem("GameObjec/Static設定/プロップ向けStaticSetting階層", false, 11)]
     public static void SetStaticPropSceneHierarchy()
     {
         foreach(var target in Selection.gameObjects)
@@ -114,7 +114,7 @@ public class SetStaticSettings
         }
     }
 
-    [MenuItem("Assets/背景オブジェクト用StaticSetting", false, 11)]
+    [MenuItem("Assets/Static設定/背景オブジェクト用StaticSetting", false, 11)]
     public static void SetStaticBGObjectPrefabs()
     {
         foreach (var assets in Selection.gameObjects)
@@ -138,13 +138,13 @@ public class SetStaticSettings
         }
     }
 
-    [MenuItem("GameObject/背景オブジェクト用StaticSetting", false, 11)]
+    [MenuItem("GameObject/Static設定/背景オブジェクト用StaticSetting", false, 11)]
     public static void SetStaticBGObjectScene()
     {
         SetStaticBGObject(Selection.gameObjects);
     }
 
-    [MenuItem("GameObject/背景オブジェクト用StaticSetting階層", false, 11)]
+    [MenuItem("GameObject/Static設定/背景オブジェクト用StaticSetting階層", false, 11)]
     public static void SetStaticBGObjectSceneHierarchy()
     {
         foreach (var target in Selection.gameObjects)
