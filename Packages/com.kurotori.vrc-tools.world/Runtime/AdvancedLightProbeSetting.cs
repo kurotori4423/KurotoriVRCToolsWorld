@@ -39,8 +39,6 @@ public class AdvancedLightProbeSetting : MonoBehaviour
 
     public void OnEnable()
     {
-        Debug.Log("OnEnable");
-
         lightProbeGroup = gameObject.GetComponent<LightProbeGroup>();
 
     }

@@ -384,7 +384,11 @@ namespace KurotoriTools
             titleStyle.normal.textColor = fontColor;
             EditorGUILayout.LabelField(title, titleStyle);
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField(discription);
+
+            GUIStyle labelStyle = new GUIStyle(GUI.skin.label);
+            labelStyle.wordWrap = true;
+
+            GUILayout.Label(discription, labelStyle);
             EditorGUILayout.Space();
             EditorGUILayout.Space();
         }

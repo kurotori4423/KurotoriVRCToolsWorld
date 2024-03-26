@@ -1,7 +1,7 @@
 {
   "name": "com.kurotori.vrc-tools.world",
   "displayName": "Kurotori VRCTools World",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "kurotori\u88fd\u30ef\u30fc\u30eb\u30c9\u5411\u3051\u30a8\u30c7\u30a3\u30bf\u62e1\u5f35\u30bb\u30c3\u30c8",
   "gitDependencies": {},
   "vpmDependencies": {
