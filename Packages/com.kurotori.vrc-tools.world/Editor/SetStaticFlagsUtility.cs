@@ -54,6 +54,25 @@ namespace KurotoriTools
                 ReflectionProbeStatic = true;
             }
 
+            GUILayout.Space(10);
+
+            if(GUILayout.Button("選択したオブジェクトのStaticフラグを取得"))
+            {
+                if(Selection.activeGameObject)
+                {
+                    var selectionStatic = GameObjectUtility.GetStaticEditorFlags(Selection.activeGameObject);
+
+                    ContributeGI = selectionStatic.HasFlag(StaticEditorFlags.ContributeGI);
+                    OccluderStatic = selectionStatic.HasFlag(StaticEditorFlags.OccluderStatic);
+                    OccludeeStatic = selectionStatic.HasFlag(StaticEditorFlags.OccludeeStatic);
+                    BatchingStatic = selectionStatic.HasFlag(StaticEditorFlags.BatchingStatic);
+                    NavigationStatic = selectionStatic.HasFlag(StaticEditorFlags.NavigationStatic);
+                    OffMeshLinkGeneration = selectionStatic.HasFlag(StaticEditorFlags.OffMeshLinkGeneration);
+                    ReflectionProbeStatic = selectionStatic.HasFlag(StaticEditorFlags.ReflectionProbeStatic);
+
+                }
+            }
+
 
             EditorGUILayout.LabelField("Staticフラグ設定", EditorStyles.boldLabel);
 
@@ -61,9 +80,9 @@ namespace KurotoriTools
 
             ContributeGI = EditorGUILayout.Toggle(new GUIContent("ContributeGI"), ContributeGI);
             OccluderStatic = EditorGUILayout.Toggle(new GUIContent("OccluderStatic"), OccluderStatic);
-            OccludeeStatic = EditorGUILayout.Toggle(new GUIContent("OccludeeStatic"), OccludeeStatic);
             BatchingStatic = EditorGUILayout.Toggle(new GUIContent("BatchingStatic"), BatchingStatic);
             NavigationStatic = EditorGUILayout.Toggle(new GUIContent("NavigationStatic"), NavigationStatic);
+            OccludeeStatic = EditorGUILayout.Toggle(new GUIContent("OccludeeStatic"), OccludeeStatic);
             OffMeshLinkGeneration = EditorGUILayout.Toggle(new GUIContent("OffMeshLinkGeneration"), OffMeshLinkGeneration);
             ReflectionProbeStatic = EditorGUILayout.Toggle(new GUIContent("ReflectionProbeStatic"), ReflectionProbeStatic);
 
@@ -82,10 +101,13 @@ namespace KurotoriTools
 
             ApplyRecursively = EditorGUILayout.Toggle(new GUIContent("子オブジェクトに再帰的に適用"), ApplyRecursively);
             EditorGUILayout.Space(2);
-            if (GUILayout.Button("Set Static Flags for Selected Objects"))
+            if (GUILayout.Button("選択したフラグを設定する"))
             {
-
                 SetStaticFlags();
+            }
+            if(GUILayout.Button("選択したフラグを追加する"))
+            {
+                AddStaticFlags();
             }
         }
 
@@ -120,6 +142,42 @@ namespace KurotoriTools
             foreach (Transform child in obj.transform)
             {
                 SetStaticFlagsRecursively(child.gameObject);
+            }
+        }
+
+        void AddStaticFlags()
+        {
+            if(ApplyRecursively)
+            {
+                foreach(GameObject obj in Selection.gameObjects)
+                {
+                    AddStaticFlagsRecursively(obj);
+                }
+            }
+            else
+            {
+                foreach(GameObject obj in Selection.gameObjects)
+                {
+                    Undo.RecordObject(obj, "Add Static Flags");
+                    var currentStatic = GameObjectUtility.GetStaticEditorFlags(obj);
+
+                    var newStatic = currentStatic | staticFlags;
+
+                    GameObjectUtility.SetStaticEditorFlags(obj, newStatic);
+                }
+            }
+        }
+
+        void AddStaticFlagsRecursively(GameObject obj)
+        {
+            Undo.RecordObject(obj, "Add Static Flags");
+            var currentStatic = GameObjectUtility.GetStaticEditorFlags(obj);
+            var newStatic = currentStatic | staticFlags;
+            GameObjectUtility.SetStaticEditorFlags(obj, newStatic);
+
+            foreach(Transform child in obj.transform)
+            {
+                AddStaticFlagsRecursively(child.gameObject);
             }
         }
     }

@@ -52,8 +52,10 @@ namespace KurotoriTools
                 EditorGUILayout.Space();
 
                 // Missingになっているブックマークがあれば削除する
-                bookmarkData.bookmarks.RemoveAll(item => item == null);
-
+                if (bookmarkData.bookmarks != null)
+                {
+                    bookmarkData.bookmarks.RemoveAll(item => item == null);
+                }
 
                 if (bookmarkData.bookmarks != null)
                 {
