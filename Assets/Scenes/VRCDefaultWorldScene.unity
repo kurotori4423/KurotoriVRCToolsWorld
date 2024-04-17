@@ -597,7 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchedFromSDKPipeline: 0
   completedSDKPipeline: 0
-  blueprintId: 
+  blueprintId: wrld_a6f14a4f-9270-4e81-9560-f3f1ba9ac433
   contentType: 1
   assetBundleUnityVersion: 
   fallbackStatus: 0
@@ -631,7 +631,7 @@ MonoBehaviour:
   contentGore: 0
   contentOther: 0
   releasePublic: 0
-  unityVersion: 2019.4.31f1
+  unityVersion: 2022.3.6f1
   udonProducts: []
   Name: 
   NSFW: 0
@@ -641,9 +641,6 @@ MonoBehaviour:
   useAssignedLayers: 0
   DynamicPrefabs: []
   DynamicMaterials:
-  - {fileID: 2100000, guid: 0e9e80121372c2b489cba971249eeb54, type: 2}
-  - {fileID: 2100000, guid: 099bc559292ab044bb6f5f8284382c96, type: 2}
-  - {fileID: 2100000, guid: b2fd424ebde5532438ac61732fcbd043, type: 2}
   - {fileID: 2100000, guid: e455454ca9661004e92e4937d7353711, type: 2}
   LightMapsNear: []
   LightMapsFar: []
@@ -698,124 +695,6 @@ MonoBehaviour:
   RenderReflectionIntensity: 0
   RenderSkybox: {fileID: 0}
   NetworkIDs:
-  - gameObject: {fileID: 0}
-    ID: 10
-  - gameObject: {fileID: 0}
-    ID: 11
-  - gameObject: {fileID: 0}
-    ID: 12
-  - gameObject: {fileID: 0}
-    ID: 13
-  - gameObject: {fileID: 0}
-    ID: 14
-  - gameObject: {fileID: 0}
-    ID: 15
-  - gameObject: {fileID: 0}
-    ID: 16
-  - gameObject: {fileID: 0}
-    ID: 17
-  - gameObject: {fileID: 0}
-    ID: 18
-  - gameObject: {fileID: 0}
-    ID: 19
-  - gameObject: {fileID: 0}
-    ID: 20
-  - gameObject: {fileID: 0}
-    ID: 21
-  - gameObject: {fileID: 0}
-    ID: 22
-  - gameObject: {fileID: 0}
-    ID: 23
-  - gameObject: {fileID: 0}
-    ID: 24
-  - gameObject: {fileID: 0}
-    ID: 25
-  - gameObject: {fileID: 0}
-    ID: 26
-  - gameObject: {fileID: 0}
-    ID: 27
-  - gameObject: {fileID: 0}
-    ID: 28
-  - gameObject: {fileID: 0}
-    ID: 29
-  - gameObject: {fileID: 0}
-    ID: 30
-  - gameObject: {fileID: 0}
-    ID: 31
-  - gameObject: {fileID: 0}
-    ID: 32
-  - gameObject: {fileID: 0}
-    ID: 33
-  - gameObject: {fileID: 0}
-    ID: 34
-  - gameObject: {fileID: 0}
-    ID: 35
-  - gameObject: {fileID: 0}
-    ID: 36
-  - gameObject: {fileID: 0}
-    ID: 37
-  - gameObject: {fileID: 0}
-    ID: 38
-  - gameObject: {fileID: 0}
-    ID: 39
-  - gameObject: {fileID: 0}
-    ID: 40
-  - gameObject: {fileID: 0}
-    ID: 41
-  - gameObject: {fileID: 0}
-    ID: 42
-  - gameObject: {fileID: 0}
-    ID: 43
-  - gameObject: {fileID: 0}
-    ID: 44
-  - gameObject: {fileID: 0}
-    ID: 45
-  - gameObject: {fileID: 0}
-    ID: 46
-  - gameObject: {fileID: 0}
-    ID: 47
-  - gameObject: {fileID: 0}
-    ID: 48
-  - gameObject: {fileID: 0}
-    ID: 49
-  - gameObject: {fileID: 0}
-    ID: 50
-  - gameObject: {fileID: 0}
-    ID: 51
-  - gameObject: {fileID: 0}
-    ID: 52
-  - gameObject: {fileID: 0}
-    ID: 53
-  - gameObject: {fileID: 0}
-    ID: 54
-  - gameObject: {fileID: 0}
-    ID: 55
-  - gameObject: {fileID: 0}
-    ID: 56
-  - gameObject: {fileID: 0}
-    ID: 57
-  - gameObject: {fileID: 0}
-    ID: 58
-  - gameObject: {fileID: 0}
-    ID: 59
-  - gameObject: {fileID: 0}
-    ID: 60
-  - gameObject: {fileID: 0}
-    ID: 61
-  - gameObject: {fileID: 0}
-    ID: 62
-  - gameObject: {fileID: 0}
-    ID: 63
-  - gameObject: {fileID: 0}
-    ID: 64
-  - gameObject: {fileID: 0}
-    ID: 65
-  - gameObject: {fileID: 0}
-    ID: 66
-  - gameObject: {fileID: 0}
-    ID: 67
-  - gameObject: {fileID: 0}
-    ID: 68
   - gameObject: {fileID: 3480278762663670689}
     ID: 69
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
