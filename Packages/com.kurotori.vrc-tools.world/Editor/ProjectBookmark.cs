@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -6,7 +6,7 @@ using UnityEngine;
 namespace KurotoriTools
 {
     /// <summary>
-    /// ƒvƒƒWƒFƒNƒgƒtƒ@ƒCƒ‹‚ÌƒuƒbƒNƒ}[ƒN‹@”\
+    /// ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯æ©Ÿèƒ½
     /// </summary>
     public class ProjectBookmark : EditorWindow
     {
@@ -36,7 +36,7 @@ namespace KurotoriTools
                 }
                 else
                 {
-                    // Œ©‚Â‚©‚ç‚È‚¢ê‡‚ÍV‚½‚É¶¬‚·‚é
+                    // è¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã¯æ–°ãŸã«ç”Ÿæˆã™ã‚‹
                     var newBookmark = new ProjectBookmarkData();
                     AssetDatabase.CreateAsset(newBookmark, "Assets/BookmarkData.asset");
                     AssetDatabase.SaveAssets();
@@ -44,14 +44,14 @@ namespace KurotoriTools
             }
             else
             {
-                if (GUILayout.Button("‘I‘ğƒIƒuƒWƒFƒNƒgEƒtƒHƒ‹ƒ_‚ğƒuƒbƒNƒ}[ƒN"))
+                if (GUILayout.Button("é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ»ãƒ•ã‚©ãƒ«ãƒ€ã‚’ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯"))
                 {
                     SaveCurrentSelection();
                 }
 
                 EditorGUILayout.Space();
 
-                // Missing‚É‚È‚Á‚Ä‚¢‚éƒuƒbƒNƒ}[ƒN‚ª‚ ‚ê‚Îíœ‚·‚é
+                // Missingã«ãªã£ã¦ã„ã‚‹ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯ãŒã‚ã‚Œã°å‰Šé™¤ã™ã‚‹
                 if (bookmarkData.bookmarks != null)
                 {
                     bookmarkData.bookmarks.RemoveAll(item => item == null);
@@ -68,12 +68,12 @@ namespace KurotoriTools
                             var guiStyleLarge = new GUIStyle();
                             var guiStyleSmall = new GUIStyle();
 
-                            // ‘å‚«‚¢•¶š—p‚ÌƒXƒ^ƒCƒ‹İ’è
+                            // å¤§ãã„æ–‡å­—ç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«è¨­å®š
                             guiStyleLarge.fontSize = 18;
                             guiStyleLarge.normal.textColor = Color.white;
                             guiStyleLarge.alignment = TextAnchor.UpperLeft;
 
-                            // ¬‚³‚¢•¶š—p‚ÌƒXƒ^ƒCƒ‹İ’è
+                            // å°ã•ã„æ–‡å­—ç”¨ã®ã‚¹ã‚¿ã‚¤ãƒ«è¨­å®š
                             guiStyleSmall.fontSize = 12;
                             guiStyleSmall.normal.textColor = Color.white;
                             guiStyleSmall.alignment = TextAnchor.LowerLeft;
@@ -84,7 +84,7 @@ namespace KurotoriTools
                                 Selection.activeObject = bookmark;
                             }
 
-                            // ƒ{ƒ^ƒ“‚ÌƒeƒLƒXƒg‚ğƒJƒXƒ^ƒ€•`‰æ
+                            // ãƒœã‚¿ãƒ³ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’ã‚«ã‚¹ã‚¿ãƒ æç”»
                             GUI.Label(buttonRect, " " + bookmark.name, guiStyleLarge);
                             GUI.Label(buttonRect, " " + AssetDatabase.GetAssetPath(bookmark), guiStyleSmall);
 

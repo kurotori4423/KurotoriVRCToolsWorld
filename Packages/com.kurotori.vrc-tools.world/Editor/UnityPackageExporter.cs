@@ -1,4 +1,4 @@
-using System.IO;
+ï»¿using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ namespace KurotoriTools
     using UnityEditor;
 
     /// <summary>
-    /// UnityƒpƒbƒP[ƒW‚ÌƒGƒNƒXƒ|[ƒg‚ğŠÈ—ª‰»‚·‚éƒXƒNƒŠƒvƒ^ƒuƒ‹ƒIƒuƒWƒFƒNƒg
+    /// Unityãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆã‚’ç°¡ç•¥åŒ–ã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ã‚¿ãƒ–ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     /// </summary>
     [CreateAssetMenu(fileName = "PackageExporter", menuName = "ScriptableObject/PackageExporter")]
     public class UnityPackageExporter : ScriptableObject
