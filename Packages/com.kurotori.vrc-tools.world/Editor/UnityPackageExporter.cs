@@ -12,9 +12,10 @@ namespace KurotoriTools
     /// <summary>
     /// Unityパッケージのエクスポートを簡略化するスクリプタブルオブジェクト
     /// </summary>
-    [CreateAssetMenu(fileName = "PackageExporter", menuName = "ScriptableObject/PackageExporter")]
+    [CreateAssetMenu(fileName = "PackageExporter", menuName = "ScriptableObjects/PackageExporter")]
     public class UnityPackageExporter : ScriptableObject
     {
+        [SerializeField] public string DefaultExportFolder = "";
         [SerializeField] public string DefaultFileName = "package";
         [SerializeField] public Object[] objects;
 
@@ -32,11 +33,20 @@ namespace KurotoriTools
             if (GUILayout.Button("Export unityPackage"))
             {
                 const string ext = "unitypackage";
+
+                var openDirectoryPath = Path.GetDirectoryName(AssetDatabase.GetAssetPath(targetPackage));
+
+                if(Directory.Exists(targetPackage.DefaultExportFolder))
+                {
+                    openDirectoryPath = targetPackage.DefaultExportFolder;
+                }
+
                 var path = EditorUtility.SaveFilePanel("Export unitypackage",
-                    Path.GetDirectoryName(AssetDatabase.GetAssetPath(targetPackage)),
+                    openDirectoryPath,
                     targetPackage.DefaultFileName + "." + ext, ext);
 
-                Export(targetPackage, path);
+                if(path.Length != 0)
+                    Export(targetPackage, path);
             }
         }
 
