@@ -5,7 +5,6 @@
   "description": "kurotori\u88fd\u30ef\u30fc\u30eb\u30c9\u5411\u3051\u30a8\u30c7\u30a3\u30bf\u62e1\u5f35\u30bb\u30c3\u30c8",
   "gitDependencies": {},
   "vpmDependencies": {
-    "com.vrchat.worlds": ">=3.4.0"
   },
   "author": {
     "name": "kurotori",
